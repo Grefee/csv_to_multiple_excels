@@ -5,16 +5,10 @@ import csv
 import chardet
 
 class mesToExcel:
-    file_path = r"C:\TEMP\lib_vatkap_plf_new.csv"
-    optimized_file = r"C:\TEMP\output_file.csv"
+    file_path = r"C:\TEMP\file.csv"
+    optimized_file = r"C:\TEMP\betterFile.csv"
 
     my_first_file = r"C:\TEMP\normalize_csv_01.csv"
-
-    # Detect the encoding of the file
-    # with open(file_path, 'rb') as file:
-    #     encoding = chardet.detect(file.read())['encoding']
-    #
-    #     print(encoding)
     # Read the file with the detected encoding
     with open(file_path, 'r', encoding='UTF-16') as input_file, \
             open(optimized_file, 'w', newline='', encoding='UTF-8') as output_file:
@@ -43,54 +37,56 @@ class mesToExcel:
 
     df = pd.read_csv(optimized_file, delimiter=';')
 
-    Rollo = [["Work Center RB1", "Common Cost RB1", ""],
-                ["Work Center RB6", "Common Cost RB6", ""],
-                ["Work Center RB8", "Common Cost RB8", ""],
-                ["Work Center RB9", "Common Cost RB9", ""],
-                ["Work Center RB10", "Common Cost RB10", ""],
-                ["Work Center RB11", "Common Cost RB11", ""],
-                ["Work Center RB12", "Common Cost RB12", ""],
-                ["Work Center Laser Cutter A", "Common Cost Laser Cutter A", ""],
-                ["Work Center Laser Cutter B", "Common Cost Laser Cutter B", ""],
-                ["Work Center Thermo 1", "Common Cost Thermo 1", ""],
-                ["Work Center Thermo 2", "Common Cost Thermo 2", ""]]
+    
+    
+    Rollo = [["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"]]
 
-    GuideRails = [["Work Center FM1", "Common Cost FM1", ""],
-                ["Work Center FM2", "Common Cost FM2", ""],
-                ["Work Center FM3", "Common Cost FM3", ""],
-                ["Work Center FM4", "Common Cost FM4", ""],
-                ["Work Center FM5", "Common Cost FM5", ""],
-                ["Finishing GR", "", ""]]
+    GuideRails = [["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"]]
 
-    Assembly = [["Work Center FA4", "Common Cost FA4", "Rework FA4"],
-                ["Work Center FA5", "Common Cost FA5", "Rework FA5"],
-                ["Work Center FA7_1", "Common Cost FA7", "Rework FA7"],
-                ["Work Center FA8", "Common Cost FA8", "Rework FA8"],
-                ["Work Center FA9", "Common Cost FA9", "Rework FA9"],
-                ["Work Center FA10", "Common Cost FA10", "Rework FA10"],
-                ["Work Center FA11", "Common Cost FA11", "Rework FA11"]]
+    Assembly = [["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"],
+                ["xxxxx", "ccccc", "rrrrr"]]
 
-    Encapsulation = [["Work Center PU1", "Common Cost PU1", "Rework PU01_01"],
-                     ["Work Center PU2", "Common Cost PU2", "Rework PU01_02"],
-                     ["Work Center PU3", "Common Cost PU3", "Rework PU01_03"],
-                     ["Work Center PU4", "Common Cost PU4", "Rework PU01_04"],
-                     ["Work Center PU5", "Common Cost PU5", "Rework PU01_05"],
-                     ["Work Center PU6", "Common Cost PU6", "Rework PU01_06"],
-                     ["Work Center PU7", "Common Cost PU7", "Rework PU01_07"],
-                     ["Work Center PU8", "Common Cost PU8", "Rework PU01_08"],
-                     ["Work Center PU9", "Common Cost PU9", "Rework PU01_09"],
-                     ["Work Center PU10", "Common Cost PU10", "Rework PU01_010"],
-                     ["Work Center PU11", "Common Cost PU11", "Rework PU01_011"],
-                     ["Work Center PU12", "Common Cost PU12", "Rework PU01_012"],
-                     ["Work Center PU13", "Common Cost PU13", "Rework PU01_013"],
-                     ["Work Center PU14", "Common Cost PU14", "Rework PU01_014"],
-                     ["Work Center PU15", "Common Cost PU15", "Rework PU01_015"]]
+    Encapsulation = [["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"],
+                     ["xxxxx", "ccccc", "rrrrr"]]
 
     yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
     date = yesterday.strftime("%Y-%m-%d")
 
-    base = [date, "OK parts", "NOK parts", "FTQ", "Plan", "Act / Plan%", "Rout time", "PartsxTEB","PartsxTEB%", "RW h", "RW Oper",
-              "Com. Cost", "PLF", "non rep. time", "disruption", "attendance h", "No of Oper", "Comments"]
+    base = [date, "rrrrr", "rrrrr", "rrrrr", "rrrrr", "rrrrr", "rrrrr", "rrrrr","rrrrr", "rrrrr", "rrrrr",
+              "rrrrr", "rrrrr", "rrrrr", "rrrrr", "rrrrr", "rrrrr", "rrrrr"]
 
 
 def oneExcelFile(csv, firstRow, template,fileName):
@@ -247,7 +243,7 @@ def oneExcelFile(csv, firstRow, template,fileName):
     workbook.save("PLF_"+fileName+".xlsx")
 
 if __name__ == '__main__':
-    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.Assembly, "Assembly")
-    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.Encapsulation, "Encapsulation")
-    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.GuideRails, "GuideRails")
-    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.Rollo, "Rollo")
+    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.rrrrr, "rrrrr")
+    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.rrrrr, "rrrrr")
+    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.rrrrr, "rrrrr")
+    oneExcelFile(mesToExcel.df, mesToExcel.base, mesToExcel.rrrrr, "rrrrr")
